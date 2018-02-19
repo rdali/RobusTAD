@@ -10,7 +10,7 @@ A Tool for Robust Annotation of Topologically Associating Domain (TAD) Boundarie
 
 RobusTAD calculates TAD boundary scores for every bin in the genome based on an interaction frequency matrix from Hi-C data. It also calls significant TAD boundaries.
 
-##### Input: 
+### Input: 
 
 The only required input for RobusTAD is an Interaction frequency matrix for a given chromosome
 
@@ -52,7 +52,7 @@ _Option2_
 
 
 
-##### Output: 
+### Output: 
 
 RobusTAD outputs 2 files:
 
@@ -85,7 +85,7 @@ chr1-100 -0.27130659072985 -0.241287485278218 -0.241287485278218
 
 Example output files are included in __Extras__.
 
-##### Dependencies:
+### Dependencies:
 
 RobusTAD is written in R; a working R environement should be available.
 
@@ -99,7 +99,7 @@ install.packages("optparse", repos="http://cran.us.r-project.org")
 
 
 
-##### Usage: 
+### Usage: 
 Rscript RobusTAD.R -i InputMatrix [options]
 
 
@@ -112,7 +112,7 @@ Rscript RobusTAD.R -i Extras/IFmatrix_GM12878_Rao_Mbo_Chr20_50kb.txt
 Example output files are also included in __Extras__.
 
 
-##### Optional Parameters:
+### Optional Parameters:
 
 ```
 
@@ -173,7 +173,7 @@ RobusTAD is available under a GPL liscence and comes with no warranties @ https:
 ```
 
 
-##### License:
+### License:
 
 RobusTAD is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
