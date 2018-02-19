@@ -228,7 +228,7 @@ TADcalls <- TADBoundcalls(boundaries, threshold)
 
 ## Save files:
 write.table(boundaries, file.path(outDir, paste0("BoundaryScores_", prefix, "_binSize",binSize ,"_minW", minWin, "_maxW", maxWin,"_minRatio", minRatio,".txt")), quote = F, row.names=F)
-write.table(TADcalls, file.path(outDir, paste0("TADBoundaryCalls_", prefix, "_binSize",binSize ,"_minW", minWin, "_maxW", maxWin,"_minRatio", minRatio,"threshold_",perc, ".txt")), quote = F, row.names=F)
+write.table(TADcalls, file.path(outDir, paste0("TADBoundaryCalls_", prefix, "_binSize",binSize ,"_minW", minWin, "_maxW", maxWin,"_minRatio", minRatio,"_threshold",perc, ".txt")), quote = F, row.names=F)
 
 print("... ... RobusTAD run is complete!")
 

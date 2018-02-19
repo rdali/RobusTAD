@@ -12,7 +12,18 @@ RobusTAD calculates TAD boundary scores for every bin in the genome based on an 
 
 ##### Input: 
 
-The only required inout for RobusTAD is an Interaction frequency matrix
+The only required input for RobusTAD is an Interaction frequency matrix for a given chromosome
+
+__File properties:__
+
+
+  * Tab-separated
+  * Square matrix: number of rows should be equal to number of columns
+  * Can contain raw or normalized counts
+  * The file can have column and row names or not at all
+
+
+An example input file is included in __Extras__.
 
 
 __Example:__
@@ -39,16 +50,7 @@ _Option2_
 ```
 
 
-__File properties:__
 
-
-  * Tab-separated
-  * Square matrix: number of rows should be equal to number of columns
-  * Can contain raw or normalized counts
-  * The file can have column and rown names or not at all
-
-
-An example input file is included in __Extras__.
 
 ##### Output: 
 
@@ -81,11 +83,12 @@ chr1-100 -0.27130659072985 -0.241287485278218 -0.241287485278218
 
 ```
 
-Xxample output files are included in __Extras__.
+Example output files are included in __Extras__.
 
 ##### Dependencies:
 
 RobusTAD is written in R; a working R environement should be available.
+
 RobusTAD also requires the "optparse" library to be able to parse command line options. You can install it in R using:
 
 
@@ -97,13 +100,13 @@ install.packages("optparse", repos="http://cran.us.r-project.org")
 
 
 ##### Usage: 
-RobusTAD.R -i InputMatrix [options]
+Rscript RobusTAD.R -i InputMatrix [options]
 
 
 An example IF matrix is included in __Extras__. You can download it and test RobusTAD using:
 
 ```
-RobusTAD.R -i Extras/IFmatrix_GM12878_Rao_Mbo_Chr20_50kb.txt
+Rscript RobusTAD.R -i Extras/IFmatrix_GM12878_Rao_Mbo_Chr20_50kb.txt
 ```
 
 Example output files are also included in __Extras__.
