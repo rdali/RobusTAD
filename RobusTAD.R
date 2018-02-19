@@ -104,7 +104,9 @@ localpeaks <- function(score){
 
 TADBoundcalls <- function(boundaries, threshold){
   ## calls TAD Boundaries using a threshold T by locating the maxima that are above the threshold
-  BoundIndex <- localpeaks(boundaries[,4])
+  BoundIndexR <- localpeaks(boundaries[,3])
+  BoundIndexL <- localpeaks(boundaries[,2])
+  BoundIndex <- unique(sort(c(BoundIndexR, BoundIndexL)))
   Boundmaxima <- boundaries[BoundIndex,]
   TADcalls <- Boundmaxima[Boundmaxima[,4] >= threshold,]
   return(TADcalls)
