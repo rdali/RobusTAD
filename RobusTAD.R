@@ -3,9 +3,9 @@
 ##################################################################
 ##                                                              ##
 ##                           RobusTAD.R                         ##  
-##                 Rola Dali & Mathieu Blanchette               ##
-##                            Feb 2018                          ##
-##                              v1.0                            ## 
+##       Rola Dali, Guillaume Bourque, Mathieu Blanchette       ##
+##                           Feb 2018                           ##
+##                             v1.0                             ## 
 ##                                                              ##
 ##################################################################
 
@@ -91,6 +91,7 @@ leftRightBoundaryScores <- function(data, minW, maxW, minRatio) {
 
 
 localpeaks <- function(score){
+  ## locates peaks across the TAD score profile
   index <- c()
   for (i in 3:(length(score)-2)){
     if(score[i] > score[i-2] && score[i] > score[i-1] && score[i] > score[i+1] && score[i] > score[i+2]){
