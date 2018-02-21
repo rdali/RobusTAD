@@ -131,7 +131,7 @@ option_list = list(
   make_option(c("-b", "--binsize"), type="integer", default=50, 
               help="binsize or resolution used in Hi-C analysis in kb [default = %default]"),
   make_option(c("-r", "--minRatio"), type="double", default=1.5, 
-              help="the ratio of TAD to background required to assign a good score [default = %default]"),
+              help="minimum ratio of Within to Across IF values to contribute to boundary score calculation [default = %default]"),
   make_option(c("-w", "--minWin"), type="integer", default=250, 
               help="minimum window around the bin used to calculate the TAD score in kb [default = %default]"),
   make_option(c("-W", "--maxWin"), type="integer", default=500, 
