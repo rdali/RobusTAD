@@ -62,7 +62,7 @@ RobusTAD outputs 2 files:
 
 BoundaryScores_*.txt  contains the Right, Left and Final scores for all bins in the provided IF matrix.
 
-The LeftBoundaryScore for bin b captures the evidence that there is a TAD _**starting**_ between bins **_b-1 and b**_. The RightBoundaryScore for bin b describes the evidence that there is a TAD _**ending**_ between bins **_b and b+1**_.
+The LeftBoundaryScore for bin b captures the evidence that there is a TAD _**starting**_ between bins **b-1 and b**. The RightBoundaryScore for bin b describes the evidence that there is a TAD _**ending**_ between bins **b and b+1**.
 
 The Final TADscore is an integration of both Right and Left scores (max(R, L)). While this is more convenient than comparing Right and Left scores across samples, it should be understood that some details are lost through this simplification. For best results, use the Right and Left scores separately.
 
