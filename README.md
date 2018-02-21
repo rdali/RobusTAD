@@ -60,7 +60,11 @@ RobusTAD outputs 2 files:
   * Significant Boundaries: TADBoundaryCalls_*.txt
   
 
-BoundaryScores_*.txt  contains the Right, Left and Final scores for all bins in the provided IF matrix
+BoundaryScores_*.txt  contains the Right, Left and Final scores for all bins in the provided IF matrix.
+
+The LeftBoundaryScore for bin b captures the evidence that there is a TAD _**starting**_ between bins **_b-1 and b**_. The RightBoundaryScore for bin b describes the evidence that there is a TAD _**ending**_ between bins **_b and b+1**_.
+
+The Final TADscore is an integration of both Right and Left scores (max(R, L)). While this is more convenient than comparing Right and Left scores across samples, it should be understood that some details are lost through this simplification. For best results, use the Right and Left scores separately.
 
 __Example format:__
 
@@ -87,7 +91,7 @@ Example output files are included in __Extras__.
 
 ### Dependencies:
 
-RobusTAD is written in R; a working R environement should be available.
+RobusTAD is written in R; a working R environment should be available.
 
 RobusTAD also requires the "optparse" library to be able to parse command line options. You can install it in R using:
 
@@ -147,7 +151,7 @@ Options:
 		binsize or resolution used in Hi-C analysis in kb [default = 50]
 
 	-r MINRATIO, --minRatio=MINRATIO
-		the ratio of TAD to background required to assign a good score [default = 1.5]
+		minimum ratio of Within to Across IF values to contribute to boundary score calculation [default = 1.5]
 
 	-w MINWIN, --minWin=MINWIN
 		minimum window around the bin used to calculate the TAD score in kb [default = 250]
