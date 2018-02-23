@@ -55,8 +55,8 @@ leftRightBoundaryScores <- function(data, minW, maxW, minRatio) {
   for (i in (maxW+2):(s-maxW-2)) {
     rightScore=0;
     leftScore =0;
-    leftBoundaryScore[i,1]=-99999;
-    rightBoundaryScore[i,1]=-99999;
+    leftBoundaryScore[i+1,1]=-99999;
+    rightBoundaryScore[i+1,1]=-99999;
     
     diag=matrix(NA,maxW,maxW);
     for (d in 1:maxW) {
@@ -71,8 +71,9 @@ leftRightBoundaryScores <- function(data, minW, maxW, minRatio) {
       }
       if (d>=minW) {
         z = rightScore/sqrt(maxiPossible);
-        if (z>rightBoundaryScore[i,1]) {
-          rightBoundaryScore[i,1]=z;
+        # note: the score calculated pertains to the presence of a boundary on the right end of bin i. However it is more convenient to report scores relating to the left end of bins, so we associate this score to bin i+1 instead of i.
+        if (z>rightBoundaryScore[i+1,1]) {
+          rightBoundaryScore[i+1,1]=z;
         }
       }
       
@@ -82,7 +83,8 @@ leftRightBoundaryScores <- function(data, minW, maxW, minRatio) {
       }
       if (d>=minW) {
         z = leftScore/sqrt(maxiPossible);
-        if (z>leftBoundaryScore[i,1]) leftBoundaryScore[i,1]=z;
+        # note: the score calculated pertains to the presence of a boundary on the right end of bin i. However it is more convenient to report scores relating to the left end of bins, so we associate this score to bin i+1 instead of i.
+        if (z>leftBoundaryScore[i+1,1]) leftBoundaryScore[i+1,1]=z;
       }
     }
   }
